@@ -1,0 +1,25 @@
+{
+  "name": "ga_projects",
+  "version": "1.0.0",
+  "description": "workout app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:toddm87/Project2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "pg-monitor": "^1.0.0",
+    "pg-promise": "^8.4.4"
+  }
+}
