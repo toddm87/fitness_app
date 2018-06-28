@@ -21,10 +21,6 @@ CREATE TABLE workouts (
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username TEXT,
-    passwrd TEXT,
-    email TEXT,
     img_url TEXT,
-    diet_id TEXT,
     workout_id TEXT,
 );
