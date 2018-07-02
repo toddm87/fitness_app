@@ -1,10 +1,70 @@
 <% include ../partials/header %>
 
-<h2 class="">Close Pushups</h2>
+<div id="main">
+<figure class="image is-128x128">
+  <img src="https://cdn.dribbble.com/users/269111/screenshots/2371101/pushup_dribbble.gif" >
+</figure> 
+<h2 class="close">Close Pushups</h2>
 
-<p>This section talks about the pros and cons of using the PERFECT.push</p>
+<p>Down below s a chart of preferred number of reps that should be performed</p>
+<hr>
+<p>
 <div class="close">
-    <p>Pros:</p>
-    <p>It involves the entire body.. YES, you read correctly, the ENTIRE body!</p>
+  <p>Instructions:</p>
+  <p>Perform as many reps as possible close (without turning the wheel)</p>
+  <p>Find your number then perform the amount of reps based of your 'Max Effort'</p>
+  <p>IE: If you maxed out at 20 then do those in that row. Or, if you did 24-27 reps (which isn't shown on the chart) I suggest you use your own descretion</p>
+  <p>Then POST your results</p>
+</div>
+<table class="table is-selected is-hoverable is-bordered">
+    <thead>
+      <tr>
+        <th>MAX</th>
+        <th>CLOSE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>4, 3, 2, 1</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>8, 6, 4, 2</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>14, 10, 6</td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td>20, 12, 8</td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td>26, 14, 10</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+<form method="POST" action="/post">
+  First name: <input name="user_id" type="text" placeholder="username" /><br>
+  Last name: <input name="user_id" type="text" placeholder="username" /><br>
+  Max reps: <input name="button" type="text" placeholder="reps" /><br>
+    <input type="submit" value="Post">
+</form>
 </div>
 
+<script>
+function openNav() {
+    document.getElementById("sideNav").style.width = "150px";
+    document.getElementById("main").style.marginLeft = "150px";
+}
+
+function closeNav() {
+    document.getElementById("sideNav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<% include ../partials/footer %>
