@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div id="main">
+<h2>Post comments</h2>
+<br>
+<% posts.forEach(post => { %>
+    <div>
+    User: <%= post.first_name %> <%= post.last_name %>
+    <br>
+    Reps: <%= post.reps %>
+    <br>
+    Type of Pushup: <%= post.type_of_pushup %>
+    <br>
+<% }) %>
+
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("sideNav").style.width = "150px";
+    document.getElementById("main").style.marginLeft = "150px";
+}
+
+function closeNav() {
+    document.getElementById("sideNav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<% include ../partials/footer %>

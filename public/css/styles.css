@@ -1,0 +1,78 @@
+body {
+    background: #d3e1f2;
+    /* padding: 40px; */
+    height: 100%;
+    padding: 25px;
+    /* line-height: 30px; */
+}
+
+h1 {
+    color: #ff9100;
+    font-size: 35px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    text-indent: 35px;
+    margin: 10px;
+}
+
+/* w3school referenced lines 26-57 for the nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #92b2d9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #e6d83c;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #d9ad92;
+    color: white;
+    text-align: center;
+ }
+
+ .inst {
+     color: red;
+     text-align: center;
+ }
+
+ .button {
+    background: yellow;
+    border-radius: 20px;
+ }

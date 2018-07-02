@@ -2,9 +2,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 const bodyParser = require('body-parser')
-const users = require('./models/users')
-const workouts = require('./models/workouts')
 const methodOverride = require('method-override')
+const users = require('./models/users')
 const Post = require('./models/posts')
 
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -20,42 +19,40 @@ app.listen(port, function(){
 // require('express').config()
 app.get('/', (req, res) => {
   users.all()
-    .then(userData => {
-     res.render('posts/homepage', {users: userData})
+    .then(usersData => {
+     res.render('posts/homepage', {users: usersData})
   })
 });
 
-app.post('/', (req,res) => {
-  workouts.all()
-    .then(workoutsData => {
-      res.render('posts/homepage', {workouts: workoutsData})
-    })
+app.get('/posts', (req, res) => {
+  post.all()
+  .then(posts => {
+    res.render('posts/index', {post: posts})
+  })
 })
 
-  app.get('/workouts', (req, res) => {
-    workouts.all()
-      .then(workoutsData => {
-        res.render('posts/homepage', {workouts: workoutsData})
-    })
-});
 
-// app.get('/users/:id/edit', (req, res)=> {
-//   const id = Number(req.params.id)
-//   Promise.all([
-//     users.findById(id)
-//       .then(userData => {
-//         post.timestamp = moment(userData.time).calendar()
-//         return userData
-//       }),
-//     workouts.all()
-//       .then(workoutsData => {
-//       return workoutsData
-//     })
-//   ])
-//       .then(([userData, workoutsData]) => {
-//       res.render('userData/edit', {user: userData, workouts: workoutsData})
-//     })
-// })
+app.get('/post', (req, res) => {
+  users.findById()
+  res.render('categories/post')
+})
+
+//post model file
+app.post('/posts', (req, res) => {
+  const posts = req.body
+  Post.create(posts)
+  .then(post => {
+    res.redirect(302, '/index')
+  })
+})
+
+app.get('/index', (req, res) => {
+  Post.all().then(
+    posts => {
+      res.render('posts/index', {posts: posts})
+    }
+  )
+})
 
 app.get('/close', (req, res) => {
   res.render('posts/close')
@@ -69,32 +66,9 @@ app.get('/wide', (req, res) => {
   res.render('posts/wide')
 })
 
-app.post('/post', (req, res) => {
-  res.render('categories/post')
-})
-
-app.put('/userData/:id', (req,res) => {
-  const updateNum = req.body
-  updateNum.id = req.params.id
-  users.update(updateNum)
-      .then(userData => {
-      res.redirect(302, `/users/${userData.id}`)
+app.delete('/post/:id', (req, res) => {
+  post.id()
+  .then(posts => {
+    res.render('/post/edit', {delete: deleteData})
     })
-})
-
-// app.post('/posts/:id', (req, res) => {
-//   const id = req.params.id
-//   Post.findById(id)
-//         .then(post => {
-//           if(post <= 10){
-//             console.log('weak sauce!')
-//           }
-//         })
-// })
-
-app.delete('/posts/:id', (req, res) => {
-  const id = Number(req.params.id)
-  user.delete(id).then(userData => {
-    res.redirect(302, '/');
-  })
 })

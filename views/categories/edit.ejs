@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<form action="/posts" method="DELETE">
+            <label>Comments</label>
+            <textarea rows="10" cols="50" name="body" placeholder="Thoughts.. 🤔⁇ ">
+            </textarea>
+    <br>
+    <button type="submit" class="button is-danger">Delete</button>
+    </div>
+  </form>
+
+
+<script>
+function openNav() {
+    document.getElementById("sideNav").style.width = "150px";
+    document.getElementById("main").style.marginLeft = "150px";
+}
+
+function closeNav() {
+    document.getElementById("sideNav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<% include ../partials/footer %>

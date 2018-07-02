@@ -1,15 +1,29 @@
 <% include ../partials/header %>
 
-<figure class="image is-128x128">
-  <img src="https://cdn.dribbble.com/users/269111/screenshots/2371101/pushup_dribbble.gif" alt="">
-</figure>
+<div id="main">
+  <img src="https://cdn.dribbble.com/users/269111/screenshots/2371101/pushup_dribbble.gif" style="width:25%" >
+  <br>
+<h2 class="is-size-2 has-text-weight-semibold">Neutral Pushups</h2>
 
+<p>Down below is a chart of preferred number of reps that should be performed in 2mins or less..</p>
+<hr>
+<p>
+<div class="inst">
+  <ul>
+    <p class="heading is-size-3 has-text-weight-bold">Instructions:</p>
+    <p class="is-size-5 has-text-weight-semibold">Perform as many reps as possible close (without turning the wheel)</p>
+    <p class="is-size-5 has-text-weight-semibold">Find your number then perform the amount of reps based of your 'Max Effort'*</p>
+    <p class="is-size-6">* If you maxed out at 20 then do the require reps</p>
+    <p class="has-text-weight-bold is-size-4">Then POST your results</p>
+  </ul>
+</div>
+<br>
 <table class="table is-selected is-hoverable is-bordered">
     <thead>
       <tr>
         <th>MAX</th>
         <th>NEUTRAL</th>
-        </tr>
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -35,11 +49,15 @@
     </tbody>
   </table>
   <br>
-
-  <a class="button is-warning is-medium">
-  Post
-  </a>
-
+<form action="/posts" method="POST">
+  First name: <input name="first_name" type="text" placeholder="username" /><br>
+  Last name: <input name="last_name" type="text" placeholder="username" /><br>
+  Type of Pushup: <input name="type_of_pushup" type="text" placeholder="type of pushup" /><br>
+  Max reps: <input name="reps" type="text" placeholder="reps" /><br>
+  <button type="submit" class="button">Update</button>
+</form>
+</div>
+<br>
 <script>
 function openNav() {
     document.getElementById("sideNav").style.width = "150px";
@@ -51,3 +69,5 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0";
 }
 </script>
+
+<% include ../partials/footer %>

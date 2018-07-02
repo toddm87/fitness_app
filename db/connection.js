@@ -1,3 +1,4 @@
+//referenced the 'example-blog' we did in class 
 const promise = require("bluebird");
 const monitor = require("pg-monitor");
 
@@ -11,8 +12,10 @@ if(process.NODE_ENV !== "production") {
     promiseLib: promise
   };
 }
+
 monitor.attach(initOptions, ["query", "error"]);
 const pgp = require("pg-promise")(initOptions);
-const connectionURL = "postgres://localhost:3000/fitness_app";
+const connectionURL = "postgres://localhost:5432/fitness_app";
 const db = pgp(connectionURL);
+
 module.exports = db;
