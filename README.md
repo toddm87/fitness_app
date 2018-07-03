@@ -1,11 +1,10 @@
 # Project2
 
-<h1>This project had `post` and `workout`</h1>
+<h1>This project had post and workout</h1>
 
 <h1>Post</h1>
 
-<ul>
-    
+<ul>    
     Id
     
     title
@@ -14,8 +13,7 @@
 </ul>
 
 <h1>Workout</h1>
-<ul>
-    
+<ul>   
     Id
     
     reps
@@ -27,37 +25,41 @@
     type_of_pushup
 </ul>
     
-<h1>CREATED DATABASE name `fitness_app`</h1>
-<hr>
+<h1>CREATED DATABASE name fitness_app</h1>
+<br>
     <p>After creating the db and sql files, I ran the schema and seed files</p>
+
 <h2>Installed:</h2>
     <p>psql -f db/schema.sql</p>
     <p>psql -f db/seed.sql</p>
 
 <h1>Server End</h1>
-<hr>
+<br>
     <p>After pasting in the server boilerplate code, I ran:</p>
-    <p>`npm init`</p>
-    <p>`npm install --save express`</p>
-    <p>Node Modules:</p>
 <ul>
+    npm init
+    npm install --save express
+</ul>
+
+<h1>Node Modules</h1>:
+
+<ul>    
+    bluebird
     
-    `bluebird`
+    pg-promise
     
-    `pg-promise`
+    ejs
     
-    `ejs`
+    monitor
     
-    `monitor`
+    moment
     
-    `moment`
-    
-    `mothod-override`
+    mothod-override
 </ul>
 
 <h1>Front End</h1>
-<hr>
     <p> I set all my functions and variables (accordingly)</p>
 
 <h1>Wireframe I used</h1>   
-    <p>![wireframe](./wireframe.jpg)</p>
+    <img src="" />
+    <p>![wireframe](desktop/wireframe.jpg)</p>
