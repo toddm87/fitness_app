@@ -5,18 +5,26 @@
 <h1>Post</h1>
 
 <ul>
-    <li>Id</li>
-    <li>title</li>
-    <li>body</li>
+    
+    Id</li>
+    
+    title</li>
+    
+    body</li>
 </ul>
 
 <h1>Workout</h1>
 <ul>
-    <li>Id</li>
-    <li>reps</li>
-    <li>first_name</li>
-    <li>last_name</li>
-    <li>type_of_pushup</li>
+    
+    Id</li>
+    
+    reps</li>
+    
+    first_name</li>
+    
+    last_name</li>
+    
+    type_of_pushup</li>
 </ul>
     
 <h1>CREATED DATABASE name `fitness_app`</h1>
@@ -33,12 +41,18 @@
     <p>`npm install --save express`</p>
     <p>Node Modules:</p>
 <ul>
-    <li>`bluebird`</li>
-    <li>`pg-promise`</li>
-    <li>`ejs`</li>
-    <li>`monitor`</li>
-    <li>`moment`</li>
-    <li>`mothod-override`</li>
+    
+    `bluebird`</li>
+    
+    `pg-promise`</li>
+    
+    `ejs`</li>
+    
+    `monitor`</li>
+    
+    `moment`</li>
+    
+    `mothod-override`</li>
 </ul>
 
 <h1>Front End</h1>
