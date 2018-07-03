@@ -61,5 +61,5 @@
     <p> I set all my functions and variables (accordingly)</p>
 
 <h1>Wireframe I used</h1>   
-    <img src="" />
-    <p>![wireframe](desktop/wireframe.jpg)</p>
+    <img src="wireframe.png" />
+    <!-- <p>![wireframe](desktop/wireframe.jpg)</p> -->
