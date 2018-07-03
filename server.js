@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 4567
@@ -5,7 +6,6 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const users = require('./models/users')
 const Post = require('./models/posts')
-require('dotenv').config()
 
 
 app.use(bodyParser.urlencoded({ extended: true }))
