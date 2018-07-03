@@ -19,3 +19,4 @@ const connectionURL = "postgres://localhost:5432/fitness_app";
 const db = pgp(connectionURL);
 
 module.exports = db;
+

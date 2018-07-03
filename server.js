@@ -1,10 +1,12 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 4567
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const users = require('./models/users')
 const Post = require('./models/posts')
+require('dotenv').config()
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
@@ -12,8 +14,8 @@ app.use('/public', express.static('public'))
 
 app.set('view engine', 'ejs')
 
-app.listen(port, function(){
-  console.log(`Listening on port ${port}`)
+app.listen(PORT, function(){
+  console.log(`Listening on port ${PORT}`)
 });
 
 // require('express').config()
@@ -25,9 +27,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posts', (req, res) => {
-  post.all()
+  Post.all()
   .then(posts => {
-    res.render('posts/index', {post: posts})
+    res.render('posts/index', {posts: posts})
   })
 })
 
@@ -66,9 +68,14 @@ app.get('/wide', (req, res) => {
   res.render('posts/wide')
 })
 
+app.get('/edit', (req, res) => {
+  res.render('categories/edit')
+})
+
 app.delete('/post/:id', (req, res) => {
-  post.id()
+  const id = Number(req.params.id)
+  Post.delete(id)
   .then(posts => {
-    res.render('/post/edit', {delete: deleteData})
+    res.redirect(302, '/edit');
     })
 })

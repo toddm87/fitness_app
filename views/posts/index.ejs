@@ -3,8 +3,8 @@
 <div id="main">
 <h2 class="is-warning">Post comments</h2>
 <br>
+
 <% posts.forEach(post => { %>
-    <div>
     User: <%= post.first_name %> <%= post.last_name %>
     <br>
     Reps: <%= post.reps %>
@@ -12,8 +12,6 @@
     Type of Pushup: <%= post.type_of_pushup %>
     <br>
 <% }) %>
-
-</div>
 
 <script>
 function openNav() {
