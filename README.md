@@ -6,25 +6,25 @@
 
 <ul>
     
-    Id</li>
+    Id
     
-    title</li>
+    title
     
-    body</li>
+    body
 </ul>
 
 <h1>Workout</h1>
 <ul>
     
-    Id</li>
+    Id
     
-    reps</li>
+    reps
     
-    first_name</li>
+    first_name
     
-    last_name</li>
+    last_name
     
-    type_of_pushup</li>
+    type_of_pushup
 </ul>
     
 <h1>CREATED DATABASE name `fitness_app`</h1>
@@ -42,17 +42,17 @@
     <p>Node Modules:</p>
 <ul>
     
-    `bluebird`</li>
+    `bluebird`
     
-    `pg-promise`</li>
+    `pg-promise`
     
-    `ejs`</li>
+    `ejs`
     
-    `monitor`</li>
+    `monitor`
     
-    `moment`</li>
+    `moment`
     
-    `mothod-override`</li>
+    `mothod-override`
 </ul>
 
 <h1>Front End</h1>
