@@ -44,4 +44,6 @@
 <h1>Front End</h1>
 <hr>
     <p> I set all my functions and variables (accordingly)</p>
-    
+
+<h1>Wireframe I used</h1>   
+    <p>![wireframe](./wireframe.jpg)</p>
