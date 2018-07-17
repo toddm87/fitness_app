@@ -25,4 +25,3 @@ const connectionUrl = process.env.DATABASE_URL;
 const db = pgp(connectionUrl);
 
 module.exports = db;
-
