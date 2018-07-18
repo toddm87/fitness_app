@@ -1,24 +1,43 @@
 const db = require('../db/connection')
-const user = {}
+const users = {}
 
-user.all = () => {
+users.all = () => {
   return db.any(
-    "SELECT * FROM user"
+    "SELECT * FROM users"
   )
 }
 
-user.create = user => {
+users.create = users => {
   return db.one(
-    "INSERT INTO user (first_name, last_name, type_of_pushup, reps) VALUES ($<first_name>, $<last_name>, $<type_of_pushup>, $<reps>) RETURNING * ",
-    user
+    "INSERT INTO users (reps, first_name, last_name, type_of_pushup, workout_id) VALUES ($<reps>, $<first_name>, $<last_name>, $<type_of_pushup>, $<workout_id>) RETURNING * ",
+    users
   )
 }
 
+users.join = users => {
+  return db.all(
+    "SELECT * FROM users JOIN workouts ON workouts.workout_id = users"
+  )
+}
 
-user.delete = id => {
+users.update = users => {
+  return db.one (
+    "UPDATE users SET reps = $<reps>, first_name =  $<first_name>, last_name = $<last_name>, type_of_pushup = $<type_of_pushup>, workout_id = $<workout_id> RETURNING *", users
+  )
+}
+
+users.findById = id => {
+  return db.one (
+    "SELECT FROM users WHERE id = $<id>", 
+    {id: id}
+  )
+}
+
+users.delete = id => {
   return db.result(
-    "DELETE FROM user WHERE id = $<id>", {id: id}
+    "DELETE FROM users WHERE id = $<id>", 
+    {id: id}
   )
 }
 
-  module.exports = user;
+  module.exports = users;
