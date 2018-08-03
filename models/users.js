@@ -16,7 +16,7 @@ users.create = users => {
 
 users.join = users => {
   return db.all(
-    "SELECT * FROM users JOIN workouts ON workouts.workout_id = users"
+    "SELECT * FROM users JOIN workouts ON workouts.id = users.workout_id"
   )
 }
 

@@ -1,16 +1,17 @@
 const db = require('../db/connection')
-const workout = {}
+const workouts = {}
 
-workout.all = () => {
+workouts.all = () => {
   return db.any(
-    "SELECT * FROM workout"
+    "SELECT * FROM workouts"
   )
 }
 
-workout.findById = id => {
+workouts.findById = id => {
     return db.one(
-      "SELECT * FROM workout WHERE id = $<id>", {id: id}
+      "SELECT * FROM workouts WHERE id = $<id>", 
+      {id: id}
     )
   }
   
-module.exports = workout;
+module.exports = workouts;

@@ -1,15 +1,15 @@
 <% include ../partials/header %>
 
 <div id="main">
-<h2 class="is-warning">Post comments</h2>
+<h2 class="is-warning">User comments</h2>
 <br>
 
-<% posts.forEach(post => { %>
-    User: <%= post.first_name %> <%= post.last_name %>
+<% users.forEach(user => { %>
+    User: <%= users.first_name %> <%= users.last_name %>
     <br>
-    Reps: <%= post.reps %>
+    Reps: <%= users.reps %>
     <br>
-    Type of Pushup: <%= post.type_of_pushup %>
+    Type of Pushup: <%= users.type_of_pushup %>
     <br>
 <% }) %>
 
