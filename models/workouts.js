@@ -7,11 +7,11 @@ workouts.all = () => {
   )
 }
 
-workouts.findById = id => {
-    return db.one(
-      "SELECT * FROM workouts WHERE id = id", 
-      {id: id}
-    )
-  }
+// workouts.findById = id => {
+//     return db.one(
+//       "SELECT * FROM workouts WHERE id = id", 
+//       {id: id}
+//     )
+//   }
   
 module.exports = workouts;
