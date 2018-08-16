@@ -4,8 +4,7 @@ const app = express()
 const PORT = process.env.PORT || 4567
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
-const users = require('./models/users')
-const Post = require('./models/posts')
+const User = require('./models/users')
 
 
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -20,62 +19,62 @@ app.listen(PORT, function(){
 
 // require('express').config()
 app.get('/', (req, res) => {
-  users.all()
+  User.all()
     .then(usersData => {
-     res.render('posts/homepage', {users: usersData})
+     res.render('users/homepage', {users: usersData})
   })
 });
 
-app.get('/posts', (req, res) => {
-  Post.all()
-  .then(posts => {
-    res.render('posts/index', {posts: posts})
+app.get('/users', (req, res) => {
+  User.all()
+  .then(users => {
+    res.render('users/index', {users: users})
   })
 })
 
 
 app.get('/post', (req, res) => {
-  users.findById()
+  User.findById()
   res.render('categories/post')
 })
 
 //post model file
-app.post('/posts', (req, res) => {
-  const posts = req.body
-  Post.create(posts)
+app.post('/users', (req, res) => {
+  const users = req.body
+  User.create(users)
   .then(post => {
     res.redirect(302, '/index')
   })
 })
 
 app.get('/index', (req, res) => {
-  Post.all().then(
-    posts => {
-      res.render('posts/index', {posts: posts})
+  User.all().then(
+    users => {
+      res.render('users/index', {users: users})
     }
   )
 })
 
 app.get('/close', (req, res) => {
-  res.render('posts/close')
+  res.render('users/close')
 })
 
 app.get('/neutral', (req, res) => {
-  res.render('posts/neutral')
+  res.render('users/neutral')
 })
 
 app.get('/wide', (req, res) => {
-  res.render('posts/wide')
+  res.render('users/wide')
 })
 
-app.get('/edit', (req, res) => {
-  res.render('categories/edit')
-})
+// app.get('/edit', (req, res) => {
+//   res.render('categories/edit')
+// })
 
-app.delete('/post/:id', (req, res) => {
-  const id = Number(req.params.id)
-  Post.delete(id)
-  .then(posts => {
-    res.redirect(302, '/edit');
-    })
-})
+// app.delete('/post/:id', (req, res) => {
+//   const id = Number(req.params.id)
+//   User.delete(id)
+//   .then(post => {
+//     res.redirect(302, '/edit');
+//     })
+// })
