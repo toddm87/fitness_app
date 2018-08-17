@@ -9,29 +9,29 @@ users.all = () => {
 
 users.create = users => {
   return db.one(
-    "INSERT INTO users (reps, first_name, last_name, type_of_pushup, workout_id) VALUES ($<reps>, $<first_name>, $<last_name>, $<type_of_pushup>, $<workout_id>) RETURNING * ",
+    "INSERT INTO users (reps, first_name, last_name, type_of_pushup) VALUES ($<reps>, $<first_name>, $<last_name>, $<type_of_pushup>) RETURNING * ",
     users
   )
 }
 
-users.join = users => {
-  return db.all(
-    "SELECT * FROM users JOIN workouts ON workouts.id = users.workout_id"
-  )
-}
+// users.join = users => {
+//   return db.all(
+//     "SELECT * FROM workout JOIN users ON workouts.user_id = users.id;"
+//   )
+// }
 
 users.update = users => {
   return db.one (
-    "UPDATE users SET reps = $<reps>, first_name =  $<first_name>, last_name = $<last_name>, type_of_pushup = $<type_of_pushup>, workout_id = $<workout_id> RETURNING *", users
+    "UPDATE users SET reps = $<reps>, first_name =  $<first_name>, last_name = $<last_name>, type_of_pushup = $<type_of_pushup> RETURNING *", users
   )
 }
 
-users.findById = id => {
-  return db.one (
-    "SELECT FROM users WHERE id = $<id>", 
-    {id: id}
-  )
-}
+// users.findById = id => {
+//   return db.one (
+//     "SELECT FROM users WHERE id = $<id>", 
+//     {id: id}
+//   )
+// }
 
 users.delete = id => {
   return db.result(
