@@ -32,7 +32,6 @@ app.get('/users', (req, res) => {
   })
 })
 
-
 app.get('/post', (req, res) => {
   User.findById()
   res.render('categories/post')
