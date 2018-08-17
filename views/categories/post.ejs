@@ -1,45 +1,26 @@
 <% include ../partials/header %>
 
 <div id="main">
+    <h2>Edit your comments</h2>
+    <div class="input-group">
+        <label>Body</label>
+        <textarea rows="10" cols="50" name="body" placeholder="Thoughts.. 🤔⁇ ">
+        </textarea>
+    </div>
 
-<h2>Edit your comments</h2>
-
-
-<div class="input-group">
-    <label>Body</label>
-    <textarea rows="10" cols="50" name="body" placeholder="Thoughts.. 🤔⁇ ">
-    </textarea>
-  </div>
-
-<div class="input-group">
-    <button type="submit" class="btn">Update</button>
-  </div>
+    <div class="input-group">
+        <button type="submit" class="btn">Update</button>
+    </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
-function openNav() {
-    document.getElementById("sideNav").style.width = "150px";
-    document.getElementById("main").style.marginLeft = "150px";
+    function openNav() {
+        document.getElementById("sideNav").style.width = "150px";
+        document.getElementById("main").style.marginLeft = "150px";
 }
-
-function closeNav() {
-    document.getElementById("sideNav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
+    function closeNav() {
+        document.getElementById("sideNav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
 }
 </script>
 
